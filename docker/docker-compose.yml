@@ -1,0 +1,20 @@
+name: ollama_to_openai_proxy
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    ports:
+      - "11434:8000"
+    # user: 1000:1000
+    volumes:
+      - ../src:/app
+    working_dir: /app
+    # command: sleep infinity
+    command: ./docker-entrypoint.sh
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
