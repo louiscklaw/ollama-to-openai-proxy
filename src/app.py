@@ -14,4 +14,4 @@ app.include_router(proxy_router)
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=11434)
+    uvicorn.run(app, host="192.168.10.1", port=11434)
