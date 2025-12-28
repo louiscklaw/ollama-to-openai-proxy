@@ -282,6 +282,12 @@ For issues and questions:
 2. Review the code documentation
 3. Open an issue in the repository
 
+## application
+
+this work best with `logseq` `ollama` plugin.
+
+![](./documentation/Logseq_SwGONorEnH.png)
+
 ---
 
 **Note**: This proxy service is designed to work specifically with LM Studio backends. For other AI service providers, you may need to modify the translation logic in the route handlers.
