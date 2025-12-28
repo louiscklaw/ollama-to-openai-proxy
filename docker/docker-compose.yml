@@ -2,12 +2,14 @@ name: ollama_to_openai_proxy
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: ollama_to_openai_proxy
     container_name: app
-    ports:
-      - "11434:8000"
+    network_mode: "host"
+    # ports:
+    #   - "11434:8000"
     # user: 1000:1000
     volumes:
       - ../src:/app
@@ -17,4 +19,27 @@ services:
     restart: unless-stopped
     environment:
       - PYTHONUNBUFFERED=1
-      - PYTHONDONTWRITEBYTECODE=1
+      # - PYTHONDONTWRITEBYTECODE=1
+
+    healthcheck:
+      test: ["CMD", "./docker-healthcheck.sh"]
+      interval: 43200s
+      timeout: 30s
+      retries: 5
+      start_period: 60s
+
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 128M
+        reservations:
+          cpus: '0.01'
+          memory: 8M
+
+    logging:
+      driver: 'json-file'
+      options:
+        # modify to 1m for less writing in block device
+        max-size: '1m'
+        max-file: '1'
