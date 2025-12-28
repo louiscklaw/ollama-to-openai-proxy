@@ -284,9 +284,11 @@ For issues and questions:
 
 ## application
 
-this work best with `logseq` `ollama` plugin.
-
+- this work best with `logseq` `ollama` plugin.
 ![](./documentation/Logseq_SwGONorEnH.png)
+
+- setting of the ollama endpoint
+![](./documentation/Logseq_2b0jz60xPK.png)
 
 ---
 
