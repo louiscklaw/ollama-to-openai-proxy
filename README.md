@@ -15,7 +15,8 @@ A FastAPI-based proxy service that seamlessly translates requests between Ollama
 
 | Ollama Endpoint | Description | OpenAI Equivalent |
 |-----------------|-------------|-------------------|
-| `GET /api/tags` | List available models | `GET /v1/models` |
+| `GET /helloworld` | Test endpoint for connectivity | - |
+| | `GET /api/tags` | List available models | `GET /v1/models` |
 | `POST /api/generate` | Text generation | `POST /v1/completions` |
 | `POST /api/chat` | Chat completions | `POST /v1/chat/completions` |
 
@@ -234,6 +235,7 @@ python -m pytest tests/ -v
 
 ### Core Endpoints
 
+- **GET /helloworld**: Simple test endpoint for connectivity testing
 - **GET /api/tags**: Lists available models
 - **POST /api/generate**: Generates text completion
 - **POST /api/chat**: Handles chat completions
