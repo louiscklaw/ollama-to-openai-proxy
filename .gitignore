@@ -311,3 +311,40 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,node
+
+# Project-specific ignores
+.tmp/
+
+# Additional ignores for Python/FastAPI projects
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Development and runtime files
+.env.local
+.env.development
+.env.production
+instance/
+.webassets-cache/
+
+# Testing and coverage
+htmlcov/
+.coverage
+.pytest_cache/
+.tox/
+
+# Logs and temporary files
+*.log
+logs/
+temp/
+tmp/
+
+# Docker-related (if not committed)
+docker-compose.override.yml
